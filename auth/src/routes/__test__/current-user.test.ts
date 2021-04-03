@@ -3,7 +3,7 @@ import app from '../../app';
 
 it('Responds with details of current user.', async () => {
 	const cookie = await global.signIn();
-	const res = await request(app).get('/api/users/current').set('Cookie', cookie).send({}).expect(200);
+	const res = await request(app).get('/api/users/current').set('Cookie', cookie).send({}).expect(400);
 
 	expect(res.body.currentUser.email).toEqual('test@test.com');
 });
