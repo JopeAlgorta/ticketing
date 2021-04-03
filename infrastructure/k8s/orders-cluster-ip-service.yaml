@@ -1,0 +1,11 @@
+apiVersion: v1
+kind: Service
+metadata:
+    name: orders-cluster-ip-service
+spec:
+    selector:
+        app: orders
+    ports:
+        - name: orders
+          port: 3000
+          targetPort: 3000
