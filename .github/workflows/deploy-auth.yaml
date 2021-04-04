@@ -15,4 +15,9 @@ jobs:
         env:
           DOCKER_PASSWORD: ${{ secrets.DOCKER_PASSWORD }}
           DOCKER_USERNAME: ${{ secrets.DOCKER_USERNAME }}
-      - run: docker push jopealgorta/auth 
+      - run: docker push jopealgorta/auth
+      - uses: digitalocean/action-doctl@v2
+        with:
+          token: ${{ secrets.DIGITALOCEAN_ACCESS_TOKEN }}
+      - run: doctl kubernetes cluster kubeconfig save tickets-sh
+      - run: kubectl rollout restart deployment auth-deployment 
