@@ -14,7 +14,8 @@ spec:
         spec:
             containers:
                 - name: expiration
-                  image: us.gcr.io/ticketing-sh/expiration
+                  # image: us.gcr.io/ticketing-sh/expiration
+                  image: jopealgorta/ticketing-expiration
                   env:
                       - name: NATS_URL
                         value: 'http://nats-cluster-ip-service:4222'
