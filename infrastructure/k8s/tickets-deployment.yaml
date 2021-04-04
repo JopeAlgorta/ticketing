@@ -14,7 +14,8 @@ spec:
         spec:
             containers:
                 - name: tickets
-                  image: us.gcr.io/ticketing-sh/tickets
+                  # image: us.gcr.io/ticketing-sh/tickets
+                  image: jopealgorta/ticketing-tickets
                   env:
                       - name: MONGO_URI
                         value: 'mongodb://tickets-mongo-cluster-ip-service:27017/tickets'
